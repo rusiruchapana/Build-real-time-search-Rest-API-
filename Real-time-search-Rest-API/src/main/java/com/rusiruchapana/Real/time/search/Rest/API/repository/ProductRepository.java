@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product , Long> {
 
-    @Query("select p from Product p where "+ 
+    @Query("select p from Product p where "+
             "p.name like concat('%',:query,'%')"+
             "or  p.description like concat('%',:query,'%') ")
     List<Product> searchProducts(String query);
