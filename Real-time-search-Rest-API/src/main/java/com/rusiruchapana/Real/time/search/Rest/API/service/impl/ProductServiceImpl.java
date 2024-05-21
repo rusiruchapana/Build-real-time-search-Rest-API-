@@ -21,4 +21,9 @@ public class ProductServiceImpl implements ProductService {
         List<Product> products = productRepository.searchProducts(query);
         return products;
     }
+
+    @Override
+    public Product createProducts(Product product) {
+       return productRepository.save(product);
+    }
 }
